@@ -1,0 +1,30 @@
+<p-menubar [model]="items" class="px-3 py-3 border-none" >
+
+    <ng-template pTemplate="start">
+        <span class="text-2xl font-bold ml-4 cursor-pointer" (click)="scrollToTop()">
+            Pablo Coba
+        </span>
+    </ng-template>
+    <!--FIXME !!! CONFIGURAR BIEN LOS MARGENES HORIZONTALES-->
+    <!--botón para el dark mode-->
+    <ng-template pTemplate="end">
+        <p-button 
+            [outlined]="false"
+            [icon]="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" 
+            [rounded]="true" 
+            [text]="true" 
+            severity="secondary"
+            (click)="toggleDarkMode()" 
+            styleClass="mr-3"
+            [ariaLabel]="'Cambiar el modo claro/oscuro'">
+        </p-button>
+        <p-button 
+            [label]="(translate.currentLang$ | async) === 'es' ? 'EN' : 'ES'" 
+            (onClick)="toggleLanguage()" 
+            [outlined]="true" 
+            severity="secondary" 
+            styleClass="p-button-sm border-round-xl">
+            <i class="pi pi-language mr-2"></i>
+        </p-button>
+    </ng-template>
+</p-menubar>

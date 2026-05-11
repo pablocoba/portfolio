@@ -1,0 +1,31 @@
+:host ::ng-deep .p-menubar {
+    position:sticky;
+    top:0;
+    left:0;
+    
+    border: none !important;
+    padding-top: 2rem; 
+    padding-bottom: 3rem;
+    display:flex;
+
+    /**/
+    .p-menubar-root-list {
+        margin-left: auto; 
+        margin-right: 0;
+    }
+    .p-menubar-end{
+        margin-left: 0; 
+    }
+}
+html:not(.my-app-dark) {
+
+    .p-button.p-button-outlined {
+        background-color: rgba(0, 0, 0, 0.02);
+        border-color: var(--p-primary-100) !important; 
+        color: var(--p-primary-100) !important; /* texto un poco más oscuro para que se lea bien */
+        background-color: var(--p-surface-100);
+        &:hover {
+            background-color: var(--p-surface-200); 
+        }
+    }
+}

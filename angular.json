@@ -24,12 +24,18 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/public",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "docs",
+                "output":"/docs"
               }
             ],
             "styles": [
+              "primeicons/primeicons.css",
+              "primeflex/primeflex.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",

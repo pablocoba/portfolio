@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+@import "typography";
+@import "primeicons/primeicons.css";
+
+html:not(.my-app-dark) {
+    background-color: var(--p-surface-100);
+    .p-button.p-button-outlined {
+        background-color: rgba(0, 0, 0, 0.02); 
+        border-color: black !important; 
+        color: black !important;
+        background-color: var(--p-surface-100);
+        &:hover {
+            background-color: var(--p-surface-200);
+        }
+    }
+}
+
+
+html.my-app-dark {
+    .p-button.p-button-outlined {
+        background-color: transparent;
+        border-color: var(--p-primary-400);
+        color: var(--p-primary-400);
+    }
+}
