@@ -7,7 +7,6 @@ html:not(.my-app-dark) {
         background-color: rgba(0, 0, 0, 0.02); 
         border-color: black !important; 
         color: black !important;
-        background-color: var(--p-surface-100);
         &:hover {
             background-color: var(--p-surface-200);
         }
@@ -21,4 +20,10 @@ html.my-app-dark {
         border-color: var(--p-primary-400);
         color: var(--p-primary-400);
     }
+}
+
+html,body{
+    scroll-behavior: smooth;
+    overflow-x:hidden;
+    position:relative;
 }

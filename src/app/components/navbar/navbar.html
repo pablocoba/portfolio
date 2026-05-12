@@ -1,5 +1,5 @@
-<p-menubar [model]="items" class="px-3 py-3 border-none" >
-
+<p-menubar [model]="items" class="navbar-items-p py-3 border-none" >
+    <div></div>
     <ng-template pTemplate="start">
         <span class="text-2xl font-bold ml-4 cursor-pointer" (click)="scrollToTop()">
             Pablo Coba
@@ -9,11 +9,10 @@
     <!--botón para el dark mode-->
     <ng-template pTemplate="end">
         <p-button 
-            [outlined]="false"
+            [outlined]="true"
             [icon]="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" 
             [rounded]="true" 
             [text]="true" 
-            severity="secondary"
             (click)="toggleDarkMode()" 
             styleClass="mr-3"
             [ariaLabel]="'Cambiar el modo claro/oscuro'">
@@ -24,7 +23,7 @@
             [outlined]="true" 
             severity="secondary" 
             styleClass="p-button-sm border-round-xl">
-            <i class="pi pi-language mr-2"></i>
+            <i class="pi pi-globe mr-1"></i>
         </p-button>
     </ng-template>
 </p-menubar>

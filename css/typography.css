@@ -1,0 +1,26 @@
+:root {
+  --font-family: "Special Gothic Expanded One", sans-serif;
+  --font-family: "Mukta", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Mukta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}/*# sourceMappingURL=typography.css.map */

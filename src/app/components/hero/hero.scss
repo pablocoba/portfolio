@@ -3,10 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-    min-height: 60vh;      
+    min-height: 70vh;      
     width: 100%;
 }
-
 
 /*Animación sencilla*/
 .hero-icons i, img {
@@ -15,3 +14,48 @@
 .hero-icons i:hover, .hero-icons img:hover {
     transform: scale(1.5);
 }
+
+/* Tooltip*/
+:host ::ng-deep .p-tooltip {
+    font-size: 0.8rem;
+}
+
+:host ::ng-deep .p-button{
+    background-color: rgba(0, 0, 0, .3) !important;
+    &:hover{
+        transform: scale(1.1);
+        background-color: rgba(0, 0, 0, .4) !important;
+        transition: .1s ease-in-out;
+        border-color: var(--p-primary-color-hover) !important;
+    }
+}
+
+html:not(.my-app-dark) {
+
+    :host ::ng-deep .p-button.p-button-outlined {
+        background-color: transparent !important;
+    }
+} 
+
+.background-logo{
+    width:200%;
+    position:absolute;
+    object-fit: cover;
+    height:1000px;
+    z-index:-1;
+    opacity:.3;
+    object-position: center 45%;
+}
+
+html:not(.my-app-dark) {
+
+    :host .background-logo{
+    width:200%;
+    position:absolute;
+    object-fit: cover;
+    height:1000px;
+    z-index:-1;
+    opacity:.8 !important;
+    object-position: center 45%;
+}
+} 

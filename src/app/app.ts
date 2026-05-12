@@ -3,10 +3,12 @@ import { RouterOutlet } from '@angular/router';import { Navbar } from "./compone
 import { HeroComponent } from "./components/hero/hero";
 import { About } from './components/about/about';
 import { TranslateService } from './commons/services/translateService';
+import { BgLion } from './components/bg-lion/bg-lion';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, About, HeroComponent],
+  imports: [RouterOutlet, Navbar, About, HeroComponent, BgLion],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

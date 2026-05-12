@@ -1,14 +1,15 @@
 :host ::ng-deep .p-menubar {
-    position:sticky;
+    position:fixed;
+    width:100%;
     top:0;
     left:0;
-    
+    z-index: 10000;
     border: none !important;
     padding-top: 2rem; 
     padding-bottom: 3rem;
     display:flex;
-
-    /**/
+    justify-content: center;
+    
     .p-menubar-root-list {
         margin-left: auto; 
         margin-right: 0;
@@ -16,16 +17,38 @@
     .p-menubar-end{
         margin-left: 0; 
     }
+    
 }
+:host ::ng-deep .navbar-items-p{
+
+        padding-right:19rem !important;
+        padding-left:19rem !important;
+
+    }
+
 html:not(.my-app-dark) {
 
     .p-button.p-button-outlined {
-        background-color: rgba(0, 0, 0, 0.02);
+
         border-color: var(--p-primary-100) !important; 
-        color: var(--p-primary-100) !important; /* texto un poco más oscuro para que se lea bien */
-        background-color: var(--p-surface-100);
+
         &:hover {
             background-color: var(--p-surface-200); 
         }
     }
+}
+
+/* Inicializamos la variable */
+:root {
+    --social-scale: 0;
+}
+::ng-deep .nav-social-item {
+  /* Forzamos que la transición se aplique al transform */
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+
+  /* Usamos la variable que controlamos desde TS */
+    transform: scale(var(--social-scale)) !important;
+    overflow: hidden;
+    &>div>a{max-width:48px;};
+    &>div>a>span{font-size:24px};
 }
