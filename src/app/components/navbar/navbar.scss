@@ -1,4 +1,4 @@
-:host ::ng-deep .p-menubar {
+:host ::ng-deep .p-menubar-desktop {
     position:fixed;
     width:100%;
     top:0;
@@ -10,7 +10,7 @@
     display:flex;
     justify-content: center;
     
-    .p-menubar-root-list {
+    &>.p-menubar-root-list {
         margin-left: auto; 
         margin-right: 0;
     }
@@ -53,3 +53,38 @@ html:not(.my-app-dark) {
     &>div>a>span{font-size:24px};
 }
 
+::ng-deep :host .p-menubar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Asegúrate de que flote sobre todo */
+  
+  /* Animación suave */
+  transition: all 0.3s ease-in-out;
+  
+  /* Oculto inicialmente */
+
+  transform: translateY(-100%); /* Lo esconde hacia arriba */
+  pointer-events: none; /* Evita que se pueda clickear sin querer mientras está invisible */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+
+/* Estilo cuando el usuario ya scrolleó */
+.menubar-active {
+
+  transform: translateY(0); /* Vuelve a su posición original */
+  pointer-events: auto; /* Ya se puede interactuar con él */
+}
+
+::ng-deep .p-menubar-end{
+
+    margin-right:auto !important;
+    &>img{
+        margin-top:.75rem;    
+    }
+}

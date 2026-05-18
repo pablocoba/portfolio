@@ -4,11 +4,11 @@ import { Button, ButtonModule } from "primeng/button";
 import { MenuItem } from 'primeng/api';
 import { take } from 'rxjs';
 import { TranslateService } from '../../commons/services/translateService';
-import { AsyncPipe, isPlatformBrowser } from '@angular/common';
+import { AsyncPipe, CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MenubarModule, Button, AsyncPipe, ButtonModule],
+  imports: [MenubarModule, Button, AsyncPipe, ButtonModule, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
   
@@ -19,7 +19,7 @@ export class Navbar {
     public translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
-
+  isMenuVisible = false;
   isDarkMode = true;
   items: MenuItem[]|undefined;
   
@@ -67,8 +67,13 @@ export class Navbar {
         root.style.setProperty('--social-scale', '0');
       }
     }
+
+    this.isMenuVisible = window.scrollY > 50;
     
   }
+
+
+  
   buildMenu() {
   // Usamos get instantáneo porque estamos dentro de la suscripción al cambio
   this.items = [

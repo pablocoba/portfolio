@@ -1,4 +1,4 @@
-<p-menubar [model]="items" class="navbar-items-p py-3 border-none">
+<p-menubar [model]="items" class="p-menubar-desktop navbar-items-p py-3 border-none hidden md:flex">
     <div></div>
     <ng-template pTemplate="start">
         <img class="logo-small" src='assets/images/shishi.png' alt="Logo">
@@ -27,4 +27,7 @@
             <i class="pi pi-globe mr-1"></i>
         </p-button>
     </ng-template>
+</p-menubar>
+<p-menubar class="border-none flex justify-center align-items-center md:hidden p-menubar-mobile" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
+    <img class="logo-small" src='assets/images/shishi.png' alt="Logo">
 </p-menubar>

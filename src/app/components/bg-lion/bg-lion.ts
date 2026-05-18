@@ -43,7 +43,7 @@ export class BgLion {
     }
     else{
       //en moviles la opacidad no cambia
-      this.opacity = 0.2;
+      this.opacity = 1;
     }
   }
   
