@@ -1,15 +1,31 @@
 .background-logo{
-    width:200%;
+    height:400px;
+    width:100%;
     position:absolute;
     object-fit: cover;
-    height:1000px;
     z-index:-1;
-    opacity:.3;
-    object-position: center 45%;
+    object-position: 51% 40%;
+    display:fixed;
+    top:-5rem;
+    left:0;
+    pointer-events:none;
+    @media(min-width:768px){
+        width:200%;
+        position:absolute;
+        object-fit: cover;
+        height:1000px;
+        z-index:-1;
+        opacity:.3;
+        object-position: center 45%;
+        display:fixed;
+        top:0;
+        left:0;
+        pointer-events:none;
+    }
 }
 
 html:not(.my-app-dark) {
-
+    
     :host .background-logo{
     width:200%;
     position:absolute;

@@ -1,8 +1,0 @@
-@charset "UTF-8";
-:host {
-  display: block; /* ¡Fundamental! Hace que el componente se comporte como un div */
-  width: 100%; /* Que ocupe todo el ancho */
-  background-color: var(--p-content-background);
-  padding: 100px 0; /* Dale relleno para que veas que "existe" */
-  min-height: 100vh;
-}/*# sourceMappingURL=about.css.map */

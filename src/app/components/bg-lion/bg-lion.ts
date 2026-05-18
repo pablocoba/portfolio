@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '../../commons/services/translateService';
 
 @Component({
@@ -9,6 +9,9 @@ import { TranslateService } from '../../commons/services/translateService';
 })
 export class BgLion {
   logoPath: string = 'assets/images/shishi.png';
+  offsetX = 0;
+  offsetY = 0;
+  opacity = 0.8;
   private observer: MutationObserver | undefined;
 
   constructor(
@@ -17,6 +20,33 @@ export class BgLion {
     @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if(window.innerWidth > 768){
+      const opThreshold = 500;
+      //calculamos el movimiento del eje y en base al scroll
+      const scroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if(scroll <= opThreshold){
+        this.opacity = 0.8;
+      }
+      else{
+        //le aplicamos distinta opacidad según la distancia scrolleada (para mejorar visibilidad en apartado skills)
+        const newOpacity = .8 - (scroll / 1700);
+        //devolvemos la nueva opacidad
+        this.opacity = this.opacity = Math.max(0, newOpacity);
+      }
+      
+      //efecto parallax en el eje X
+      this.offsetX = scroll * 0.75;
+      this.offsetY = scroll;
+    }
+    else{
+      //en moviles la opacidad no cambia
+      this.opacity = 0.2;
+    }
+  }
+  
   //updatea la bg img del hero section
   updateLogo() {
   const isLight = document.documentElement.classList.contains('my-app-dark') || 

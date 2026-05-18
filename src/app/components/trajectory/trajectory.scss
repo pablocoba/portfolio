@@ -2,11 +2,6 @@
     display: block;      /* ¡Fundamental! Hace que el componente se comporte como un div */
     width: 100%;         /* Que ocupe todo el ancho */
     background-color: var(--p-content-background); 
-    padding: 3rem 0; 
-
-    @media(min-width:768px){
-        min-height: 45vh;
-        padding: 5rem 0; 
-    }
+    padding: 100px 0;    /* Dale relleno para que veas que "existe" */
+    min-height: 200vh;
 }
-

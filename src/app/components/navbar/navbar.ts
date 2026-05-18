@@ -17,20 +17,16 @@ export class Navbar {
 
   constructor(
     public translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
   isDarkMode = true;
   items: MenuItem[]|undefined;
   
   ngOnInit() {
-    this.items = [
-        { icon: 'pi pi-github', styleClass: 'nav-social-item', url: 'https://github.com/pablocoba', target: '_blank' },
-        { icon: 'pi pi-linkedin', styleClass: 'nav-social-item', url:'https://www.linkedin.com/in/pablocobadev/', target: '_blank' },
-        { label: 'Sobre mí', icon: 'pi pi-user'},
-        { label: 'Proyectos', icon: 'pi pi-briefcase' },
-        { label: 'Contacto', icon: 'pi pi-envelope' }
-    ];
+    this.translate.currentLang$.subscribe(() => {
+        this.buildMenu();
+    });
   }
   //función para quitar o poner el modo oscuro
   toggleDarkMode() {
@@ -71,6 +67,41 @@ export class Navbar {
         root.style.setProperty('--social-scale', '0');
       }
     }
+    
   }
+  buildMenu() {
+  // Usamos get instantáneo porque estamos dentro de la suscripción al cambio
+  this.items = [
+    { 
+      icon: 'pi pi-github', 
+      styleClass: 'nav-social-item',
+      url: 'https://github.com/tu-user',
+      target: '_blank'
+    },
+    { 
+      icon: 'pi pi-linkedin', 
+      styleClass: 'nav-social-item',
+      url: 'https://linkedin.com/in/tu-user',
+      target: '_blank'
+    },
+    { 
+      label: this.translate.translate('ABOUTME'), 
+      icon: 'pi pi-user',
+      routerLink: '/sobre-mi'
+    },
+    { 
+      label: this.translate.translate('ALGO'), 
+      icon: 'pi pi-briefcase',
+      routerLink: '/proyectos'
+    },
+    { 
+      label: this.translate.translate('CONTACT'), 
+      icon: 'pi pi-envelope',
+      routerLink: '/contacto'
+    }
+  ];
+}
+
+  
 
 }

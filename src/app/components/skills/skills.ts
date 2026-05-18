@@ -1,27 +1,27 @@
 import { ChangeDetectorRef, Component, ElementRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
-import { Button } from "primeng/button";
-import { TranslatePipe } from "../../commons/pipes/translatePipe";
-import { TranslateService } from '../../commons/services/translateService';
+import { TranslateService } from '../../commons/services/translateService'; 
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-about',
-  imports: [TranslatePipe],
-  templateUrl: './about.html',
-  styleUrl: './about.scss',
+  selector: 'app-skills',
+  imports: [],
+  templateUrl: './skills.html',
+  styleUrl: './skills.scss',
 })
-export class About {
+export class Skills {
+
+  //variable para poder volver a scrollear hacia arriba.
+  private hasScrolled = false;
+  opacityMain: number = 1;
+  opacitySoft: number = 0;
+
   constructor(
     public translate: TranslateService,
     private cd: ChangeDetectorRef,
     private el: ElementRef,
     @Inject(PLATFORM_ID) private platformId: Object //esto es para que se ejecute en cliente y no de error de SSR
   ) {}
-
-  //variable para poder volver a scrollear hacia arriba.
-  private hasScrolled = false;
-
-
+  
   ngAfterViewInit() {
     if(isPlatformBrowser(this.platformId)){
       const observer = new IntersectionObserver((entries) => {
@@ -32,11 +32,10 @@ export class About {
           this.hasScrolled = true; // marcamos que ya se hizo una vez
         }
       });
-    }, { threshold: 0.5 }); // se activa cuando el 50% del componente es visible
+    }, { threshold: 0.55 }); // se activa cuando el 70% del componente es visible
 
     observer.observe(this.el.nativeElement);
     }
-
   }
 
   scrollToSection() {
@@ -50,5 +49,7 @@ export class About {
       this.hasScrolled = false;
     }
   }
+
+  
 
 }
