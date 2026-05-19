@@ -102,7 +102,7 @@ export class Navbar {
     }
   ];
 }
-
+  //los iconos se salen del container
   get dots(): MenuItem[] {
   return [
     

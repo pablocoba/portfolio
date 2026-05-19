@@ -1,5 +1,5 @@
 <!--desktop navbar-->
-<p-menubar [model]="items" class="p-menubar-desktop navbar-items-p py-3 border-none hidden md:flex">
+<p-menubar [model]="items" class="p-menubar-desktop navbar-items-p py-3 border-none hidden lg:flex">
     <div></div>
     <ng-template pTemplate="start">
         <img class="desktop-nav-logo" src='assets/images/shishi.png' alt="Logo">
@@ -30,7 +30,7 @@
     </ng-template>
 </p-menubar>
 <!--mobile navbar-->
-<p-menubar class="border-none md:hidden p-menubar-mobile overflow-hidden" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
+<p-menubar class="border-none lg:hidden p-menubar-mobile overflow-hidden" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
     <div class="flex flex-row justify-center align-items-center">
         <!--social media-->
         <div class="nav-social-mobile">
@@ -57,6 +57,7 @@
         <!--logo central nav-->
         <img class="logo-small" src='assets/images/shishi.png' alt="Logo" (click)="scrollToTop()">
         <!--ajustes página-->
+        <!--FIXME los iconos se salen del container-->
         <div class="nav-dots-mobile">
             <p-button 
                 icon="pi pi-ellipsis-v" 

@@ -3,10 +3,11 @@
     width: 100%;         /* Que ocupe todo el ancho */
     background-color: var(--p-content-background); 
     padding: 3rem 0; 
+    margin:auto;
 
     @media(min-width:768px){
         min-height: 45vh;
-        padding: 5rem 0; 
+        padding: 5vh 0vw; 
     }
 }
 
