@@ -22,7 +22,7 @@ export class BgLion {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if(window.innerWidth > 768){
+    if(window.innerWidth >= 768){
       const opThreshold = 500;
       //calculamos el movimiento del eje y en base al scroll
       const scroll = window.pageYOffset || document.documentElement.scrollTop;

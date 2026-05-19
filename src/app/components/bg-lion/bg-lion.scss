@@ -24,7 +24,17 @@
     }
 }
 
-html:not(.my-app-dark) {
+html:not(.my-app-dark){
+    :host .background-logo{
+        filter:invert(100%);
+        opacity:.9 !important;
+        /* @media(min-width:768px){
+            filter:invert(0);
+        } */
+    }
+}
+
+/* html:not(.my-app-dark) {
     
     :host .background-logo{
     width:200%;
@@ -35,4 +45,4 @@ html:not(.my-app-dark) {
     opacity:.8 !important;
     object-position: center 45%;
 }
-} 
+}  */

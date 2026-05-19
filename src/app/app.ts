@@ -6,13 +6,13 @@ import { TranslateService } from './commons/services/translateService';
 import { BgLion } from './components/bg-lion/bg-lion';
 import { Skills } from './components/skills/skills';
 import { Trajectory } from './components/trajectory/trajectory';
-import { NavMobile } from './components/nav-mobile/nav-mobile';
+
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, About, HeroComponent, BgLion, Skills, Trajectory, NavMobile],
+  imports: [RouterOutlet, Navbar, About, HeroComponent, BgLion, Skills, Trajectory],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

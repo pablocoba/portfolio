@@ -5,10 +5,11 @@ import { MenuItem } from 'primeng/api';
 import { take } from 'rxjs';
 import { TranslateService } from '../../commons/services/translateService';
 import { AsyncPipe, CommonModule, isPlatformBrowser } from '@angular/common';
+import { MenuModule } from 'primeng/menu';
 
 @Component({
   selector: 'app-navbar',
-  imports: [MenubarModule, Button, AsyncPipe, ButtonModule, CommonModule],
+  imports: [MenubarModule, Button, AsyncPipe, ButtonModule, CommonModule, MenuModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
   
@@ -22,9 +23,13 @@ export class Navbar {
   isMenuVisible = false;
   isDarkMode = true;
   items: MenuItem[]|undefined;
-  
+  currentLangStr = 'es';
+  lang:string = '';
+  showUpButton = false;
+
   ngOnInit() {
     this.translate.currentLang$.subscribe(() => {
+        this.currentLangStr = this.lang;
         this.buildMenu();
     });
   }
@@ -63,16 +68,17 @@ export class Navbar {
 
       if (scroll >= 300) {
         root.style.setProperty('--social-scale', '1');
+        //que aparezca el botón de subir al inicio después de scrollear un poco también
+        this.showUpButton = true;
       } else {
         root.style.setProperty('--social-scale', '0');
+        this.showUpButton = false;
       }
     }
 
     this.isMenuVisible = window.scrollY > 50;
     
   }
-
-
   
   buildMenu() {
   // Usamos get instantáneo porque estamos dentro de la suscripción al cambio
@@ -107,6 +113,44 @@ export class Navbar {
   ];
 }
 
-  
+  get dots(): MenuItem[] {
+  return [
+    
+    {
+      label: this.currentLangStr === 'es' ? 'EN' : 'ES',
+      icon: 'pi pi-globe',
+      command: () => {
+        this.toggleLanguage();
+      }
+    },
+    {
+      label: '',
+      icon: this.isDarkMode ? 'pi pi-sun' : 'pi pi-moon',
+      command: () => {
+        this.toggleDarkMode();
+      }
+    }
+  ];
+}
+
+get social(): MenuItem[] {
+  return [
+    
+    {
+      label: '',
+      icon: 'pi pi-linkedin',
+      command: () => {
+        // this.toggleLanguage();
+      }
+    },
+    {
+      label: '',
+      icon: 'pi pi-github',
+      command: () => {
+        // this.toggleDarkMode();
+      }
+    }
+  ];
+}
 
 }

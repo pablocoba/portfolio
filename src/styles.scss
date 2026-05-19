@@ -31,6 +31,22 @@ html,body{
 
 .logo-small{
     width:72px;
-    overflow: hidden;
-    transform: scale(2.5);
+    overflow: hidden !important;
+    transform: scale(3.5);
+}
+
+.desktop-nav-logo{
+    width:72px;
+    overflow: hidden !important;
+    transform: scale(3.25);
+}
+
+.dots-ul .p-menu-list{
+    max-width:4rem !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
+
+.dots-ul{
+    min-width:7rem !important;
 }

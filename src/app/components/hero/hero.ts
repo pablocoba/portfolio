@@ -43,7 +43,7 @@ export class HeroComponent implements OnInit {
         attributes: true,
         attributeFilter: ['class']
       });
-          }
+    }
   }
 
   //funcion que empequeñece el texto onScroll

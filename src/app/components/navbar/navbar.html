@@ -1,7 +1,7 @@
 <p-menubar [model]="items" class="p-menubar-desktop navbar-items-p py-3 border-none hidden md:flex">
     <div></div>
     <ng-template pTemplate="start">
-        <img class="logo-small" src='assets/images/shishi.png' alt="Logo">
+        <img class="desktop-nav-logo" src='assets/images/shishi.png' alt="Logo">
         <span class="lg:text-2xl font-bold ml-4 cursor-pointer" (click)="scrollToTop()">
             Pablo Coba
         </span>
@@ -28,6 +28,53 @@
         </p-button>
     </ng-template>
 </p-menubar>
-<p-menubar class="border-none flex justify-center align-items-center md:hidden p-menubar-mobile" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
-    <img class="logo-small" src='assets/images/shishi.png' alt="Logo">
+<p-menubar class="border-none md:hidden p-menubar-mobile overflow-hidden" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
+    <div class="flex flex-row justify-center align-items-center">
+        <!--social media-->
+        <div class="nav-social-mobile">
+            <a href="https://github.com/pablocoba" target="_blank" rel="noopener noreferrer" class="no-underline" aria-label="Visitar mi perfil de GitHub">
+                <p-button 
+                    [text]="true" 
+                    rounded="true">
+                    <div class="flex align-items-center gap-2 font-bold">
+                        <i class="pi pi-github" aria-hidden="true"></i> 
+                    </div>
+                </p-button>
+            </a>
+
+            <a href="https://www.linkedin.com/in/pablocobadev/" target="_blank" rel="noopener noreferrer" class="no-underline" aria-label="Visitar mi perfil de LinkedIn">
+                <p-button 
+                    [text]="true" 
+                    rounded="true">
+                    <div class="flex align-items-center gap-2 font-bold">
+                        <i class="pi pi-linkedin" aria-hidden="true"></i> 
+                    </div>
+                </p-button>
+            </a>
+        </div>
+        <!--logo central nav-->
+        <img class="logo-small" src='assets/images/shishi.png' alt="Logo" (click)="scrollToTop()">
+        <!--ajustes página-->
+        <div class="nav-dots-mobile">
+            <p-button 
+                icon="pi pi-ellipsis-v" 
+                [text]="true" 
+                [rounded]="true" 
+                (click)="menu.toggle($event)" 
+                styleClass="p-button-md">
+            </p-button>
+            <p-menu #menu [model]="dots" [popup]="true" appendTo="body" styleClass="dots-ul"></p-menu>
+        </div>
+    </div>
 </p-menubar>
+
+<p-button 
+    icon="pi pi-arrow-up" 
+    [text]="true" 
+    [rounded]="true" 
+    (click)="scrollToTop()" 
+    styleClass="p-button-md"
+    class="up-button"
+    [style.display] = "showUpButton ? 'block' : 'none' ">
+</p-button>
+

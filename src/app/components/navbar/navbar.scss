@@ -53,7 +53,8 @@ html:not(.my-app-dark) {
     &>div>a>span{font-size:24px};
 }
 
-::ng-deep :host .p-menubar-mobile {
+.p-menubar-mobile {
+    padding:1rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -61,16 +62,13 @@ html:not(.my-app-dark) {
   z-index: 1000; /* Asegúrate de que flote sobre todo */
   
   /* Animación suave */
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   
   /* Oculto inicialmente */
 
   transform: translateY(-100%); /* Lo esconde hacia arriba */
   pointer-events: none; /* Evita que se pueda clickear sin querer mientras está invisible */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    justify-content: center !important;
-    align-items: center !important;
+
 
 }
 
@@ -83,8 +81,56 @@ html:not(.my-app-dark) {
 
 ::ng-deep .p-menubar-end{
 
-    margin-right:auto !important;
+
     &>img{
         margin-top:.75rem;    
     }
+}
+
+::ng-deep .p-menubar-mobile{
+    .p-menubar-end{
+        margin-right:auto !important;
+    }
+
+}
+
+.nav-dots-mobile{
+    margin-top:1rem;
+    margin-right:1rem;
+    top:0;
+    right:0;
+    position:absolute;
+    justify-self: flex-end;
+}
+
+.nav-social-mobile{
+    margin-top:1rem;
+    margin-left:1rem;
+    top:0;
+    left:0;
+    position:absolute;
+    justify-self: flex-start;
+}
+
+html:not(.my-app-dark){
+    :host .logo-small{
+        filter:invert(100%);
+        /* @media(min-width:768px){
+            filter:invert(0);
+        } */
+    }
+}
+
+.logo-small{
+    transform: scale(6) !important;
+    object-position: center 20%;
+    object-fit: contain;
+}
+
+.up-button{
+    display:hidden;
+    position:fixed;
+    bottom:1rem;
+    right:1rem;
+    transition: .2s ease-in-out;
 }

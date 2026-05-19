@@ -27,12 +27,14 @@ export class About {
       const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         //si el usuario baja y la sección aparece, y aún no hemos forzado el scroll
-        if (entry.isIntersecting && !this.hasScrolled) {
+        const isDesktop = window.innerWidth >= 768;
+
+        if (entry.isIntersecting && !this.hasScrolled && isDesktop) {
           this.scrollToSection();
           this.hasScrolled = true; // marcamos que ya se hizo una vez
         }
       });
-    }, { threshold: 0.5 }); // se activa cuando el 50% del componente es visible
+    }, { threshold: 0.6 }); // se activa cuando el 50% del componente es visible
 
     observer.observe(this.el.nativeElement);
     }
