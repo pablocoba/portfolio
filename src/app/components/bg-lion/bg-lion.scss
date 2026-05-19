@@ -27,10 +27,13 @@
 html:not(.my-app-dark){
     :host .background-logo{
         filter:invert(100%);
-        opacity:.9 !important;
+        opacity:.9;
         /* @media(min-width:768px){
             filter:invert(0);
         } */
+        @media(min-width:768px){
+            
+        }
     }
 }
 

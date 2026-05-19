@@ -1,3 +1,4 @@
+<!--desktop navbar-->
 <p-menubar [model]="items" class="p-menubar-desktop navbar-items-p py-3 border-none hidden md:flex">
     <div></div>
     <ng-template pTemplate="start">
@@ -28,6 +29,7 @@
         </p-button>
     </ng-template>
 </p-menubar>
+<!--mobile navbar-->
 <p-menubar class="border-none md:hidden p-menubar-mobile overflow-hidden" [ngClass]="{'menubar-active': isMenuVisible, 'menubar-hidden': !isMenuVisible}">
     <div class="flex flex-row justify-center align-items-center">
         <!--social media-->
@@ -67,7 +69,7 @@
         </div>
     </div>
 </p-menubar>
-
+<!--scrollToTop Arrow-->
 <p-button 
     icon="pi pi-arrow-up" 
     [text]="true" 

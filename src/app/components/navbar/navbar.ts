@@ -96,16 +96,6 @@ export class Navbar {
       target: '_blank'
     },
     { 
-      label: this.translate.translate('ABOUTME'), 
-      icon: 'pi pi-user',
-      routerLink: '/sobre-mi'
-    },
-    { 
-      label: this.translate.translate('ALGO'), 
-      icon: 'pi pi-briefcase',
-      routerLink: '/proyectos'
-    },
-    { 
       label: this.translate.translate('CONTACT'), 
       icon: 'pi pi-envelope',
       routerLink: '/contacto'

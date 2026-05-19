@@ -38,7 +38,7 @@ export class BgLion {
       }
       
       //efecto parallax en el eje X
-      this.offsetX = scroll * 0.75;
+      this.offsetX = scroll * 0.71;
       this.offsetY = scroll;
     }
     else{

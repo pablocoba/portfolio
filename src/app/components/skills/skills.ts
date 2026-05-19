@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, ElementRef, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '../../commons/services/translateService'; 
 import { isPlatformBrowser } from '@angular/common';
+import { TranslatePipe } from "../../commons/pipes/translatePipe";
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })

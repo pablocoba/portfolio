@@ -1,7 +1,9 @@
 {
     "SUBTITLE": "Full Stack Developer · Angular & Spring Boot",
     "ABOUTME": "About me",
-    "ABOUTMETEXT": "Fullstack Developer expert in Angular & Spring Boot. Although I'm strong in backend, my true passion lies in Front-end and UI design. I excel at turning complex concepts into efficient, fluid, and user-centric layouts. I believe great software is born from the perfect mix of technical efficiency, creativity, and meticulous attention to detail.",
-    "CONTACT": "Contact"
+    "ABOUTMETEXT": "Fullstack Developer expert in Angular & Spring Boot. Although my technical foundation is strong in backend architecture, my true passion lies in Front-end development and UI design. I excel at bridging the gap between complex logic and visual storytelling, turning abstract concepts into efficient, fluid, and user-centric layouts. I believe that truly great software is born from the perfect mix of technical performance, intuitive creativity, and a meticulous, pixel-perfect attention to detail.",
+    "CONTACT": "Contact",
+    "MAINSKILLS":"Main Skills",
+    "ANGULARPRIMENG":"Angular & PrimeNG"
 
 }

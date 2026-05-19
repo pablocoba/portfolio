@@ -41,6 +41,12 @@ html,body{
     transform: scale(3.25);
 }
 
+html:not(.my-app-dark){
+    .desktop-nav-logo{
+        filter:invert(100%);
+    }
+}
+
 .dots-ul .p-menu-list{
     max-width:4rem !important;
     flex-direction: row !important;
